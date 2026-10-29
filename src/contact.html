@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <meta name="description" content="Get in touch with Thalaxis Technology about system specifications, procurement, and partnership opportunities.">
+  <link rel="canonical" href="https://www.thalaxistechnology.in/contact">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Us — Thalaxis Technology">
+  <meta property="og:description" content="Get in touch with Thalaxis Technology about system specifications, procurement, and partnership opportunities.">
+  <meta property="og:url" content="https://www.thalaxistechnology.in/contact">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages/contact.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index" class="header-logo">THALAXIS</a>
+
+      <nav class="nav-primary">
+        <div class="nav-links">
+          <a href="index" class="nav-link">Home</a>
+          <a href="about" class="nav-link">About Us</a>
+          <a href="products" class="nav-link">Products</a>
+          <a href="careers" class="nav-link">Careers</a>
+        </div>
+        <div class="nav-cta row-sm" style="align-items: center; gap: var(--space-sm);">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">◐</button>
+          <a href="contact" class="btn btn-primary">Contact Us</a>
+        </div>
+      </nav>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="section page-header-section">
+    <div class="container container-wide">
+      <span class="eyebrow">Enquiries &amp; Procurement</span>
+      <h1>Contact Our Team</h1>
+      <p class="page-lead">For inquiries regarding system specifications, procurement, deployment logistics, or research partnerships.</p>
+    </div>
+  </section>
+
+  <!-- Contact Grid -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container container-wide">
+      <div class="contact-grid">
+        <!-- Contact Information -->
+        <div class="contact-info-column stack-2xl">
+          <div>
+            <h2>REACH US</h2>
+            <!--<p class="soft" style="margin-top: var(--space-sm);"></p>-->
+          </div>
+          <br>
+
+          <div class="stack-xl">
+            <div class="contact-detail-item">
+              <span class="eyebrow" style="margin-bottom: var(--space-2xs);">Email</span>
+              <a href="mailto:info@thalaxistechnology.in" style="font-size: 1.125rem; font-weight: 500; color: var(--color-brand);">info@thalaxistechnology.in</a>
+            </div>
+            <br>
+
+            <div class="contact-detail-item">
+              <span class="eyebrow" style="margin-bottom: var(--space-2xs);">Phone</span>
+              <span style="font-size: 1.125rem; font-weight: 500;">+91 [Contact Number Placeholder]</span>
+            </div>
+            <br>
+
+            <div class="contact-detail-item">
+              <span class="eyebrow" style="margin-bottom: var(--space-2xs);">Office &amp; Facility</span>
+              <span class="soft" style="font-size: 1.125rem; line-height: 1.6;">
+                [Address Line 1 Placeholder]<br>
+                [City, State, Postal Code]<br>
+                India
+              </span>
+            </div>
+            <br>
+
+            <div class="contact-detail-item">
+              <span class="eyebrow" style="margin-bottom: var(--space-2xs);">Business Hours</span>
+              <span class="soft" style="font-size: 1.125rem;">Monday – Friday: 09:00 – 18:00 IST</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-column card">
+          <h2 style="font-size: 1.75rem; margin-bottom: var(--space-xl);">Send an enquiry</h2>
+
+          <!-- Success Alert (hidden by default) -->
+          <div id="form-success-alert" style="display: none; background: var(--color-brand-soft); border: 1px solid var(--color-brand); padding: var(--space-lg); border-radius: var(--radius-sm); margin-bottom: var(--space-xl);">
+            <h4 class="brand" style="font-size: 1rem; margin-bottom: var(--space-2xs);">Enquiry submitted successfully</h4>
+            <p class="soft" style="font-size: 0.9375rem; margin-bottom: 0;">Thank you for contacting Thalaxis Technology. Our engineering team will review your message and respond within two business days.</p>
+          </div>
+
+          <form id="contact-form" class="stack-lg" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label">Full Name *</label>
+              <input type="text" id="name" name="name" class="form-input" required placeholder="Dr. Jane Doe">
+              <div class="form-error" id="error-name" style="display: none;">Please enter your full name.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email *</label>
+              <input type="email" id="email" name="email" class="form-input" required placeholder="j.doe@institution.edu">
+              <div class="form-error" id="error-email" style="display: none;">Please enter a valid email address.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Phone Number *</label>
+              <input type="number" id="phone number" name="name" class="form-input" required placeholder="+91xxxxxxxxxx">
+              <div class="form-error" id="error-number" style="display: none;">Please enter a valid number.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="organization" class="form-label">Organization / Institution</label>
+              <input type="text" id="organization" name="organization" class="form-input" placeholder="Oceanographic Research Institute">
+            </div>
+
+            <div class="form-group">
+              <label for="enquiry-type" class="form-label">Enquiry Type *</label>
+              <select id="enquiry-type" name="enquiryType" class="form-select" required>
+                <option value="" disabled selected>Select enquiry type</option>
+                <option value="tx-3000">Autonomous Surface Vessel (ASV)</option>
+                <option value="ex-6000">Deep Submergence Unit (AUV)</option>
+                <option value="custom">Custom System Engineering</option>
+                <option value="research">Research Partnership</option>
+                <option value="general">General Inquiry</option>
+              </select>
+              <div class="form-error" id="error-type" style="display: none;">Please select an enquiry type.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message / Mission Requirements *</label>
+              <textarea id="message" name="message" class="form-textarea" required placeholder="Describe your operational depths, scientific payload requirements, or deployment timeline..."></textarea>
+              <div class="form-error" id="error-message" style="display: none;">Please enter your message.</div>
+            </div>
+
+            <div class="form-group">
+              <label style="display: flex; align-items: flex-start; gap: var(--space-sm); cursor: pointer; font-size: 0.9375rem;" class="soft">
+                <input type="checkbox" id="consent" name="consent" required style="margin-top: 4px;">
+                <span>I consent to Thalaxis Technology processing my contact details for the purpose of handling this enquiry, in accordance with the <a href="privacy-policy" class="brand" target="_blank">Privacy Policy</a>. *</span>
+              </label>
+              <div class="form-error" id="error-consent" style="display: none;">You must agree to the privacy policy.</div>
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Enquiry</button>
+            </div>
+
+            <p class="form-hint" style="text-align: center; margin-top: var(--space-xs);">* Required fields. Note: This form is configured with a safe client-side submission adapter.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">THALAXIS</div>
+          <p class="footer-tagline">Engineering for extreme environments. Developing pressure-tested submersible systems for deep ocean exploration.</p>
+          <div class="footer-socials" style="display: flex; gap: var(--space-md); margin-top: var(--space-sm);">
+            <a href="https://linkedin.com/company/thalaxis-technology" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+            <a href="https://twitter.com/thalaxistech" target="_blank" rel="noopener" class="footer-link">Twitter</a>
+            <a href="https://youtube.com/@thalaxistechnology" target="_blank" rel="noopener" class="footer-link">YouTube</a>
+            <a href="https://github.com/thalaxis-technology" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <nav class="footer-links">
+            <a href="about" class="footer-link">About Us</a>
+            <a href="products" class="footer-link">Products</a>
+            <a href="careers" class="footer-link">Careers</a>
+            <a href="contact" class="footer-link">Contact</a>
+          </nav>
+        </div>
+
+        <div class="footer-section">
+          <h4>Products</h4>
+          <nav class="footer-links">
+            <a href="product-detail?slug=tx-3000-submersible" class="footer-link">TX-3000 Submersible</a>
+            <a href="product-detail?slug=ex-6000-explorer" class="footer-link">EX-6000 Explorer</a>
+          </nav>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="mailto:info@thalaxistechnology.in" class="footer-link">info@thalaxistechnology.in</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="privacy-policy">Privacy Policy</a>
+          <a href="terms-and-conditions">Terms &amp; Conditions</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Thalaxis Technology</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module">
+    import {
+      initSmoothScroll,
+      setActiveNavLink,
+      initMobileMenu,
+      respectReducedMotion,
+      updateCopyrightYear,
+      initThemeSystem
+    } from './js/utils.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initSmoothScroll();
+      setActiveNavLink();
+      initMobileMenu();
+      respectReducedMotion();
+      updateCopyrightYear();
+      initThemeSystem();
+
+      // Check URL search params for product pre-selection
+      const params = new URLSearchParams(window.location.search);
+      const productSlug = params.get('product');
+      if (productSlug) {
+        const select = document.getElementById('enquiry-type');
+        if (select) {
+          if (productSlug.includes('tx-3000')) select.value = 'tx-3000';
+          else if (productSlug.includes('ex-6000')) select.value = 'ex-6000';
+        }
+      }
+
+      // Form validation and submission adapter
+      const form = document.getElementById('contact-form');
+      const successAlert = document.getElementById('form-success-alert');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Reset errors
+        document.querySelectorAll('.form-error').forEach(el => el.style.display = 'none');
+
+        let isValid = true;
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const type = document.getElementById('enquiry-type').value;
+        const message = document.getElementById('message').value.trim();
+        const consent = document.getElementById('consent').checked;
+
+        if (!name) {
+          document.getElementById('error-name').style.display = 'block';
+          isValid = false;
+        }
+
+        if (!email || !email.includes('@') || !email.includes('.')) {
+          document.getElementById('error-email').style.display = 'block';
+          isValid = false;
+        }
+
+        if (!type) {
+          document.getElementById('error-type').style.display = 'block';
+          isValid = false;
+        }
+
+        if (!message) {
+          document.getElementById('error-message').style.display = 'block';
+          isValid = false;
+        }
+
+        if (!consent) {
+          document.getElementById('error-consent').style.display = 'block';
+          isValid = false;
+        }
+
+        if (!isValid) return;
+
+        // Honest submission adapter (client-side simulation when no backend is configured)
+        const formData = {
+          name,
+          email,
+          organization: document.getElementById('organization').value.trim(),
+          enquiryType: type,
+          message,
+          timestamp: new Date().toISOString(),
+        };
+
+        console.log('Form submitted successfully (Adapter):', formData);
+
+        // Show success alert and reset form
+        successAlert.style.display = 'block';
+        form.reset();
+        successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+/* Thalaxis Technology — Contact Page Styles */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-4xl);
+  align-items: start;
+}
+
+.contact-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .contact-info-column {
+    order: 2;
+  }
+}

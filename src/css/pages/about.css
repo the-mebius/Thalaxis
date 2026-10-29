@@ -1,0 +1,166 @@
+/* Thalaxis Technology — About Page Styles */
+
+.page-header-section {
+  padding-top: calc(env(safe-area-inset-top, 0px) + 120px);
+  padding-bottom: var(--space-3xl);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.page-header-section h1 {
+  margin-bottom: var(--space-md);
+}
+
+.page-lead {
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  color: var(--color-ink-soft);
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-4xl);
+  padding-top: var(--space-4xl);
+}
+
+.about-main h2 {
+  font-size: 2rem;
+  margin-top: var(--space-3xl);
+  margin-bottom: var(--space-lg);
+}
+
+.about-main h2:first-child {
+  margin-top: 0;
+}
+
+.about-main p {
+  color: var(--color-ink-soft);
+  line-height: 1.75;
+  margin-bottom: var(--space-lg);
+}
+
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.stat-item {
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.stat-value {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--space-2xs);
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--color-ink-soft);
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  position: relative;
+  padding-left: var(--space-3xl);
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 11px;
+  width: 2px;
+  background: var(--color-line);
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-year {
+  position: absolute;
+  left: calc(var(--space-3xl) * -1);
+  top: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-brand);
+  width: calc(var(--space-3xl) - var(--space-md));
+  text-align: right;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--space-3xl) * -1 + 22px);
+  top: calc(1.5rem + 6px);
+  width: 10px;
+  height: 10px;
+  background: var(--color-brand);
+  border-radius: 50%;
+  border: 2px solid var(--color-canvas);
+}
+
+.timeline-content {
+  padding: var(--space-xl);
+}
+
+.timeline-content h4 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-xs);
+}
+
+.timeline-content p {
+  color: var(--color-ink-soft);
+  margin-bottom: 0;
+}
+
+/* Founders */
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-2xl);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .about-sidebar {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 0;
+  }
+
+  .timeline::before,
+  .timeline-item::after {
+    display: none;
+  }
+
+  .timeline-year {
+    position: static;
+    text-align: left;
+    margin-bottom: var(--space-xs);
+    width: auto;
+  }
+}

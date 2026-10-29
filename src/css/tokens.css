@@ -1,0 +1,117 @@
+/* Thalaxis Technology — Design Tokens
+   Single source of truth for color, type, spacing, radius, motion.
+   Dark-first palette with a light-mode override. */
+:root {
+  /* ===== Brand =====
+     Accent derived from the brand's teal identity (#00E599 / #00B870).
+     Used sparingly: links, active states, thin rule lines, data marks. */
+  --color-brand:        #00E599;
+  --color-brand-strong: #00C781;
+  --color-brand-soft:   rgba(0, 229, 153, 0.14);
+
+  /* ===== Surfaces (dark-first abyssal marine) ===== */
+  --color-void:    #030508;
+  --color-canvas:  #070B10;
+  --color-surface: #0E141D;
+  --color-elevated:#151D2A;
+
+  /* ===== Type (dark-first) ===== */
+  --color-ink:       #F4F6FB;
+  --color-ink-soft:  #B0B8C4;
+  --color-ink-faint: #7A8494;
+  --color-line:      #1F2836;
+  --color-line-soft: #141B24;
+
+  /* ===== Type scale ===== */
+  --font-display: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --font-sans:    'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:    'JetBrains Mono', 'SF Mono', 'Courier New', monospace;
+
+  /* ===== Spacing (4px base) ===== */
+  --space-2xs: 0.25rem;  /* 4px  */
+  --space-xs:  0.5rem;   /* 8px  */
+  --space-sm:  0.75rem;  /* 12px */
+  --space-md:  1rem;     /* 16px */
+  --space-lg:  1.5rem;   /* 24px */
+  --space-xl:  2rem;     /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+  --space-4xl: 6rem;     /* 96px */
+  --space-5xl: 8rem;     /* 128px */
+  --space-6xl: 10rem;    /* 160px */
+
+  /* ===== Layout ===== */
+  --container-narrow: 720px;
+  --container-medium:  960px;
+  --container-wide:    1280px;
+  --container-full:    1400px;
+
+  /* ===== Radius ===== */
+  --radius-0: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* ===== Motion ===== */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-snappy: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast:   140ms;
+  --dur-mid:    260ms;
+  --dur-slow:   420ms;
+
+  color-scheme: dark;
+}
+
+/* ===== Light mode ===== */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --color-void:    #F4F5F6;
+    --color-canvas:  #FFFFFF;
+    --color-surface: #F0F1F3;
+    --color-elevated:#FFFFFF;
+
+    --color-ink:       #0E1116;
+    --color-ink-soft:  #454A52;
+    --color-ink-faint: #8A909A;
+    --color-line:      #D6D9DF;
+    --color-line-soft: #E6E8EC;
+
+    --color-brand:        #009E63;
+    --color-brand-strong: #007A4F;
+    --color-brand-soft:   rgba(0, 158, 99, 0.12);
+
+    color-scheme: light;
+  }
+}
+
+:root[data-theme="light"] {
+  --color-void:    #F4F5F6;
+  --color-canvas:  #FFFFFF;
+  --color-surface: #F0F1F3;
+  --color-elevated:#FFFFFF;
+  --color-ink:       #0E1116;
+  --color-ink-soft:  #454A52;
+  --color-ink-faint: #8A909A;
+  --color-line:      #D6D9DF;
+  --color-line-soft: #E6E8EC;
+  --color-brand:        #009E63;
+  --color-brand-strong: #007A4F;
+  --color-brand-soft:   rgba(0, 158, 99, 0.12);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --color-void:    #030508;
+  --color-canvas:  #070B10;
+  --color-surface: #0E141D;
+  --color-elevated:#151D2A;
+  --color-ink:       #F4F6FB;
+  --color-ink-soft:  #B0B8C4;
+  --color-ink-faint: #7A8494;
+  --color-line:      #1F2836;
+  --color-line-soft: #141B24;
+  --color-brand:        #00E599;
+  --color-brand-strong: #00C781;
+  --color-brand-soft:   rgba(0, 229, 153, 0.14);
+  color-scheme: dark;
+}

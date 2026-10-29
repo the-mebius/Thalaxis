@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found</title>
+  <meta name="description" content="The requested page could not be found.">
+  <link rel="canonical" href="https://www.thalaxistechnology.in/404">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index" class="header-logo">THALAXIS</a>
+
+      <nav class="nav-primary">
+        <div class="nav-links">
+          <a href="index" class="nav-link">Home</a>
+          <a href="about" class="nav-link">About Us</a>
+          <a href="products" class="nav-link">Products</a>
+          <a href="careers" class="nav-link">Careers</a>
+        </div>
+        <div class="nav-cta row-sm" style="align-items: center; gap: var(--space-sm);">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">◐</button>
+          <a href="contact" class="btn btn-primary">Contact Us</a>
+        </div>
+      </nav>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 404 Content -->
+  <main style="min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: calc(env(safe-area-inset-top, 0px) + 120px) var(--space-md) var(--space-6xl);">
+    <div class="container container-narrow">
+      <span class="eyebrow" style="color: var(--color-brand); margin-bottom: var(--space-sm);">Error 404</span>
+      <h1 style="font-size: clamp(3rem, 8vw, 6rem); margin-bottom: var(--space-md);">Page not found</h1>
+      <p class="soft" style="font-size: 1.125rem; max-width: 50ch; margin-inline: auto; margin-bottom: var(--space-2xl);">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+      <div class="row-sm" style="justify-content: center;">
+        <a href="index" class="btn btn-primary">Return to Homepage</a>
+        <a href="products" class="btn btn-secondary">Explore Products</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">THALAXIS</div>
+          <p class="footer-tagline">Engineering for extreme environments. Developing pressure-tested submersible systems for deep ocean exploration.</p>
+          <div class="footer-socials" style="display: flex; gap: var(--space-md); margin-top: var(--space-sm);">
+            <a href="https://linkedin.com/company/thalaxis-technology" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+            <a href="https://twitter.com/thalaxistech" target="_blank" rel="noopener" class="footer-link">Twitter</a>
+            <a href="https://youtube.com/@thalaxistechnology" target="_blank" rel="noopener" class="footer-link">YouTube</a>
+            <a href="https://github.com/thalaxis-technology" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <nav class="footer-links">
+            <a href="about" class="footer-link">About Us</a>
+            <a href="products" class="footer-link">Products</a>
+            <a href="careers" class="footer-link">Careers</a>
+            <a href="contact" class="footer-link">Contact</a>
+          </nav>
+        </div>
+
+        <div class="footer-section">
+          <h4>Products</h4>
+          <nav class="footer-links">
+            <a href="product-detail?slug=tx-3000-submersible" class="footer-link">TX-3000 Submersible</a>
+            <a href="product-detail?slug=ex-6000-explorer" class="footer-link">EX-6000 Explorer</a>
+          </nav>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="mailto:info@thalaxistechnology.in" class="footer-link">info@thalaxistechnology.in</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="privacy-policy">Privacy Policy</a>
+          <a href="terms-and-conditions">Terms &amp; Conditions</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Thalaxis Technology</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module">
+    import {
+      initSmoothScroll,
+      setActiveNavLink,
+      initMobileMenu,
+      respectReducedMotion,
+      updateCopyrightYear,
+      initThemeSystem
+    } from './js/utils.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initSmoothScroll();
+      setActiveNavLink();
+      initMobileMenu();
+      respectReducedMotion();
+      updateCopyrightYear();
+      initThemeSystem();
+    });
+  </script>
+
+</body>
+</html>

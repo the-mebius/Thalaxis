@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers</title>
+  <meta name="description" content="Join Thalaxis Technology and build next-generation autonomous marine systems. View open positions in engineering and operations.">
+  <link rel="canonical" href="https://www.thalaxistechnology.in/careers">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Careers — Thalaxis Technology">
+  <meta property="og:description" content="Join Thalaxis Technology and build next-generation autonomous marine systems. View open positions in engineering and operations.">
+  <meta property="og:url" content="https://www.thalaxistechnology.in/careers">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages/careers.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index" class="header-logo">THALAXIS</a>
+
+      <nav class="nav-primary">
+        <div class="nav-links">
+          <a href="index" class="nav-link">Home</a>
+          <a href="about" class="nav-link">About Us</a>
+          <a href="products" class="nav-link">Products</a>
+          <a href="careers" class="nav-link active">Careers</a>
+        </div>
+        <div class="nav-cta row-sm" style="align-items: center; gap: var(--space-sm);">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">◐</button>
+          <a href="contact" class="btn btn-primary">Contact Us</a>
+        </div>
+      </nav>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="section page-header-section">
+    <div class="container container-wide">
+      <span class="eyebrow">Careers &amp; Recruitment</span>
+      <h1>Build the future of autonomous marine operations</h1>
+      <p class="page-lead">We're looking for engineers and operators who want to solve complex problems at the edge of maritime technology.</p>
+    </div>
+  </section>
+
+  <!-- Job Listings -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container container-medium">
+      <div class="section-head">
+        <h2>Open Positions</h2>
+        <p>Join our engineering and operations team in designing and testing autonomous marine platforms.</p>
+      </div>
+
+      <div id="job-listings-root" class="stack-xl">
+        <!-- Rendered via JS from careers.js data -->
+        <p class="soft">Loading open positions...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Modal -->
+  <div id="apply-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <h2 id="modal-position-title" style="font-size: 1.75rem; margin-bottom: var(--space-lg);">Apply for Position</h2>
+
+      <div id="modal-success-alert" style="display: none; background: var(--color-brand-soft); border: 1px solid var(--color-brand); padding: var(--space-lg); border-radius: var(--radius-sm); margin-bottom: var(--space-xl);">
+        <h4 class="brand" style="font-size: 1rem; margin-bottom: var(--space-2xs);">Application submitted successfully</h4>
+        <p class="soft" style="font-size: 0.9375rem; margin-bottom: 0;">Thank you for your application. Our recruitment team will review your qualifications and contact you within five business days.</p>
+      </div>
+
+      <form id="application-form" class="stack-lg" novalidate>
+        <input type="hidden" id="position-id" name="positionId">
+
+        <div class="form-group">
+          <label for="applicant-name" class="form-label">Full Name *</label>
+          <input type="text" id="applicant-name" name="name" class="form-input" required placeholder="Jane Doe">
+          <div class="form-error" id="error-app-name" style="display: none;">Please enter your full name.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="applicant-email" class="form-label">Email Address *</label>
+          <input type="email" id="applicant-email" name="email" class="form-input" required placeholder="jane.doe@engineering.com">
+          <div class="form-error" id="error-app-email" style="display: none;">Please enter a valid email address.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="applicant-phone" class="form-label">Phone Number</label>
+          <input type="tel" id="applicant-phone" name="phone" class="form-input" placeholder="+1 (555) 019-2834">
+        </div>
+
+        <div class="form-group">
+          <label for="applicant-resume" class="form-label">Resume / CV Link or File Name *</label>
+          <input type="text" id="applicant-resume" name="resume" class="form-input" required placeholder="Link to LinkedIn, Portfolio, or PDF file name">
+          <div class="form-error" id="error-app-resume" style="display: none;">Please provide your resume link or file.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="applicant-cover" class="form-label">Cover Letter / Relevant Experience</label>
+          <textarea id="applicant-cover" name="coverLetter" class="form-textarea" placeholder="Describe your experience with autonomous systems, marine robotics, or embedded software..."></textarea>
+        </div>
+
+        <div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Submit Application</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">THALAXIS</div>
+          <p class="footer-tagline">Engineering for extreme environments. Autonomous marine platforms.</p>
+          <div class="footer-socials" style="display: flex; gap: var(--space-md); margin-top: var(--space-sm);">
+            <a href="https://linkedin.com/company/thalaxis-technology" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+            <a href="https://twitter.com/thalaxistech" target="_blank" rel="noopener" class="footer-link">Twitter</a>
+            <a href="https://youtube.com/@thalaxistechnology" target="_blank" rel="noopener" class="footer-link">YouTube</a>
+            <a href="https://github.com/thalaxis-technology" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <nav class="footer-links">
+            <a href="about" class="footer-link">About Us</a>
+            <a href="products" class="footer-link">Products</a>
+            <a href="careers" class="footer-link">Careers</a>
+            <a href="contact" class="footer-link">Contact</a>
+          </nav>
+        </div>
+
+        <div class="footer-section">
+          <h4>Products</h4>
+          <nav class="footer-links">
+            <a href="product-detail?slug=autonomous-surface-vessel" class="footer-link">Autonomous Surface Vessel</a>
+            <a href="product-detail?slug=deep-submergence-unit" class="footer-link">Deep Submergence Unit</a>
+          </nav>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="mailto:info@thalaxistechnology.in" class="footer-link">info@thalaxistechnology.in</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="privacy-policy">Privacy Policy</a>
+          <a href="terms-and-conditions">Terms &amp; Conditions</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Thalaxis Technology</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module">
+    import { getActiveJobs, getJobById } from './data/careers.js';
+    import {
+      initSmoothScroll,
+      setActiveNavLink,
+      initMobileMenu,
+      respectReducedMotion,
+      updateCopyrightYear,
+      initThemeSystem
+    } from './js/utils.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initSmoothScroll();
+      setActiveNavLink();
+      initMobileMenu();
+      respectReducedMotion();
+      updateCopyrightYear();
+      initThemeSystem();
+
+      // Render job listings
+      const jobsRoot = document.getElementById('job-listings-root');
+      const activeJobs = getActiveJobs();
+
+      if (activeJobs.length === 0) {
+        jobsRoot.innerHTML = `
+          <div class="card" style="text-align: center; padding: var(--space-3xl);">
+            <h3>No open positions at this time</h3>
+            <p class="soft" style="margin: var(--space-md) auto 0;">We are always interested in connecting with experienced marine engineers and roboticists. Send your CV to <a href="mailto:info@thalaxistechnology.in" class="brand">info@thalaxistechnology.in</a>.</p>
+          </div>
+        `;
+      } else {
+        jobsRoot.innerHTML = activeJobs.map(job => `
+          <article class="card" data-job-id="${job.id}">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-lg); margin-bottom: var(--space-md); flex-wrap: wrap;">
+              <div>
+                <span class="badge badge-brand" style="margin-bottom: var(--space-xs); display: inline-flex;">${job.department}</span>
+                <h3 style="font-size: 1.5rem; margin-bottom: var(--space-2xs);">${job.title}</h3>
+                <p class="soft" style="font-size: 0.875rem;">${job.location} &bull; ${job.type}</p>
+              </div>
+              <button class="btn btn-primary apply-trigger-btn" data-job-id="${job.id}">Apply for Role</button>
+            </div>
+
+            <p class="soft" style="line-height: 1.7; margin-bottom: var(--space-lg);">${job.description}</p>
+
+            <div class="stack-sm" style="border-top: 1px solid var(--color-line); padding-top: var(--space-lg);">
+              <h4 style="font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.05em;">Key Requirements</h4>
+              <ul style="padding-left: 1.25rem; color: var(--color-ink-soft);" class="stack-2xs">
+                ${job.requirements.map(req => `<li>${req}</li>`).join('')}
+              </ul>
+            </div>
+          </article>
+        `).join('');
+      }
+
+      // Modal logic
+      const modal = document.getElementById('apply-modal');
+      const modalClose = modal.querySelector('.modal-close');
+      const positionTitle = document.getElementById('modal-position-title');
+      const positionIdInput = document.getElementById('position-id');
+      const applicationForm = document.getElementById('application-form');
+      const successAlert = document.getElementById('modal-success-alert');
+
+      document.querySelectorAll('.apply-trigger-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const jobId = btn.getAttribute('data-job-id');
+          const job = getJobById(jobId);
+          if (!job) return;
+
+          positionTitle.textContent = `Apply for ${job.title}`;
+          positionIdInput.value = job.id;
+          successAlert.style.display = 'none';
+          applicationForm.reset();
+          positionIdInput.value = job.id;
+
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+
+      // Form submission adapter
+      applicationForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        document.querySelectorAll('.form-error').forEach(el => el.style.display = 'none');
+
+        let isValid = true;
+        const name = document.getElementById('applicant-name').value.trim();
+        const email = document.getElementById('applicant-email').value.trim();
+        const resume = document.getElementById('applicant-resume').value.trim();
+
+        if (!name) {
+          document.getElementById('error-app-name').style.display = 'block';
+          isValid = false;
+        }
+
+        if (!email || !email.includes('@')) {
+          document.getElementById('error-app-email').style.display = 'block';
+          isValid = false;
+        }
+
+        if (!resume) {
+          document.getElementById('error-app-resume').style.display = 'block';
+          isValid = false;
+        }
+
+        if (!isValid) return;
+
+        const applicationData = {
+          positionId: positionIdInput.value,
+          name,
+          email,
+          phone: document.getElementById('applicant-phone').value.trim(),
+          resume,
+          coverLetter: document.getElementById('applicant-cover').value.trim(),
+          timestamp: new Date().toISOString(),
+        };
+
+        console.log('Job application submitted successfully (Adapter):', applicationData);
+
+        successAlert.style.display = 'block';
+        applicationForm.reset();
+        successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    });
+  </script>
+
+</body>
+</html>

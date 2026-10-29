@@ -1,0 +1,33 @@
+/* Thalaxis Technology — Product Detail Page Styles */
+
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-4xl);
+  align-items: start;
+}
+
+.product-main-info h1 {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+}
+
+.product-sidebar {
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .product-sidebar {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

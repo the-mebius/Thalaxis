@@ -1,0 +1,35 @@
+/* Thalaxis Technology — Products Page Styles */
+
+.products-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2xl);
+}
+
+.product-catalog-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-2xl);
+}
+
+.product-catalog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.product-catalog-price-tag {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+@media (max-width: 1024px) {
+  .products-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}

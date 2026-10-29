@@ -1,0 +1,17 @@
+{
+  "name": "thalaxis-landing",
+  "version": "1.0.0",
+  "description": "Thalaxis Technology - Underwater exploration systems",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["underwater", "submersible", "exploration"],
+  "author": "Thalaxis Technology",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

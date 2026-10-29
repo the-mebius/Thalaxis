@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thalaxis Technology — Autonomous Marine &amp; Subsea Platforms</title>
+  <meta name="description" content="Engineering autonomous surface vessels and deep submergence units for marine research, defense, and offshore operations.">
+  <link rel="canonical" href="https://www.thalaxistechnology.in/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Thalaxis Technology — Autonomous Marine &amp; Subsea Platforms">
+  <meta property="og:description" content="Engineering autonomous surface vessels and deep submergence units for marine research and defense.">
+  <meta property="og:url" content="https://www.thalaxistechnology.in/">
+  <meta property="og:site_name" content="Thalaxis Technology">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Thalaxis Technology",
+    "url": "https://www.thalaxistechnology.in",
+    "description": "Engineering autonomous surface vessels and deep submergence units for marine exploration.",
+    "foundingDate": "2018",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@thalaxistechnology.in",
+      "contactType": "Customer Service"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Theme Picker Modal (First Load Popup) -->
+  <div id="theme-popup-modal" class="modal" style="background: rgba(3, 5, 8, 0.92);">
+    <div class="modal-content" style="text-align: center; max-width: 480px; padding: var(--space-3xl) var(--space-2xl);">
+      <span class="eyebrow">Viewing Experience</span>
+      <h2 style="font-size: 2rem; margin-bottom: var(--space-md);">Choose Your Theme</h2>
+      <p class="soft" style="margin-bottom: var(--space-2xl); margin-inline: auto; font-size: 0.9375rem;">Select your preferred viewing mode for autonomous marine platforms.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+        <button id="choose-dark-mode" class="btn btn-secondary" style="justify-content: center; background: #0E141D; color: #F4F6FB; border-color: #1F2836;">Dark Mode (Void)</button>
+        <button id="choose-light-mode" class="btn btn-secondary" style="justify-content: center; background: #FFFFFF; color: #0E1116; border-color: #D6D9DF;">Light Mode (Precision)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header header-home">
+    <div class="header-inner">
+      <a href="index" class="header-logo">THALAXIS</a>
+
+      <nav class="nav-primary">
+        <div class="nav-links">
+          <a href="index" class="nav-link active">Home</a>
+          <a href="about" class="nav-link">About Us</a>
+          <a href="products" class="nav-link">Products</a>
+          <a href="careers" class="nav-link">Careers</a>
+        </div>
+        <div class="nav-cta row-sm" style="align-items: center; gap: var(--space-sm);">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">◐</button>
+          <a href="contact" class="btn btn-primary">Contact Us</a>
+        </div>
+      </nav>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero with Centered Video Background & Mute Toggle -->
+  <section class="hero-video">
+    <div class="hero-video-bg">
+      <video id="hero-video-el" class="hero-video-element" autoplay muted loop playsinline poster="assets/img/ship1.jpg">
+        <source src="/video/Thalaxis.MP4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
+    <button id="video-mute-toggle" class="video-audio-toggle" aria-label="Unmute background video">
+      <span id="mute-icon">🔇</span> <span id="mute-text">Unmute Video</span>
+    </button>
+
+    <div class="hero-video-content">
+      <div class="container container-full">
+        <div class="hero-content-inner">
+          <span class="eyebrow" style="color: var(--color-brand); margin-bottom: var(--space-sm);">Thalaxis Technology <br> <br></span>
+          <h1>Intelligence Beneath.<br>Capability Beyond.</h1>
+          <p class="hero-lead"><br></p>
+          <div class="hero-actions">
+            <a href="products" class="btn btn-primary">View Systems</a>
+            <a href="about" class="btn btn-secondary">Our Technology</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products with Imagery -->
+  <section class="section" style="background: var(--color-canvas);">
+    <div class="container container-wide">
+      <div class="section-head" style="text-align: center; margin-inline: auto;">
+        <span class="eyebrow">Certified Systems</span>
+        <h2>Our Flagship Platforms</h2>
+        <p style="margin-inline: auto;">Purpose-built autonomous systems designed for the most demanding marine environments.</p>
+      </div>
+
+      <div class="product-grid">
+        <!-- ASV -->
+        <article class="product-card-home">
+          <div class="product-badge-corner">
+            <span class="badge badge-brand">SURFACE VESSEL</span>
+          </div>
+          <div class="product-card-image">
+            <img src="assets/img/ship1.jpg" alt="Autonomous Surface Vessel (ASV)" style="width: full; height: full; object-fit: fill; object-position: center;" loading="lazy">
+          </div>
+          <div class="product-card-body">
+            <h3>Autonomous Surface Vessel (ASV)</h3>
+            <p class="product-category soft">Surface Platform</p>
+            <p class="product-description">An intelligent autonomous marine platform designed to support modern maritime operations through AI-powered navigation, modular sensor integration, and adaptive mission configurations.</p>
+            <div class="product-specs-inline">
+              <div class="spec-inline">
+                <span class="spec-label soft">Type</span>
+                <span class="spec-value mono">ASV</span>
+              </div>
+              <div class="spec-inline">
+                <span class="spec-label soft">Endurance</span>
+                <span class="spec-value mono">24h+</span>
+              </div>
+              <div class="spec-inline">
+                <span class="spec-label soft">Payload</span>
+                <span class="spec-value mono">500kg</span>
+              </div>
+            </div>
+            <a href="product-detail?slug=autonomous-surface-vessel" class="btn btn-secondary" style="margin-top: var(--space-xl); width: 100%; justify-content: center;">View Details</a>
+          </div>
+        </article>
+
+        <!-- AUV / Deep Submergence Unit -->
+        <article class="product-card-home">
+          <div class="product-badge-corner">
+            <span class="badge badge-brand">6000M RATED</span>
+          </div>
+          <div class="product-card-image">
+            <img src="assets/img/11.png" alt="Deep Submergence Unit (AUV)" style="width: full; height: full; object-fit: fill; object-position: center;" loading="lazy">
+          </div>
+          <div class="product-card-body">
+            <h3>Deep Submergence Unit (AUV)</h3>
+            <p class="product-category soft">Deep Submergence</p>
+            <p class="product-description">An underwater robotic platform engineered for subsea operations — featuring integrated vehicle control, real-time acoustic telemetry, and mission-specific sensor payloads.</p>
+            <div class="product-specs-inline">
+              <div class="spec-inline">
+                <span class="spec-label soft">Max depth</span>
+                <span class="spec-value mono">6,000m</span>
+              </div>
+              <div class="spec-inline">
+                <span class="spec-label soft">Endurance</span>
+                <span class="spec-value mono">20h+</span>
+              </div>
+              <div class="spec-inline">
+                <span class="spec-label soft">Type</span>
+                <span class="spec-value mono">AUV</span>
+              </div>
+            </div>
+            <a href="product-detail?slug=deep-submergence-unit" class="btn btn-secondary" style="margin-top: var(--space-xl); width: 100%; justify-content: center;">View Details</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Journey Preview -->
+  <section class="section section-tight">
+    <div class="container container-medium">
+      <div class="journey-preview">
+        <span class="eyebrow">OUR MOTIVE</span>
+        <h2>Pioneering the Future of Autonomous Exploration</h2>
+        <p>Thalaxis Technology is building the next generation of autonomous marine platforms — designed with indigenous engineering to serve maritime operations across defense, research, port logistics, and environmental monitoring.</p>
+        <a href="about#journey" class="btn btn-secondary">View Company Journey</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-tight" style="background: var(--color-canvas);">
+    <div class="container container-medium">
+      <div class="cta-box">
+        <h2>Ready to explore deeper?</h2>
+        <p>Whether you're in defense, marine research, port operations, or environmental monitoring — let's discuss how our platforms can power your next mission.</p>
+        <div class="cta-actions">
+          <a href="contact" class="btn btn-primary">Get in Touch</a>
+          <a href="careers" class="btn btn-secondary">Join Our Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">THALAXIS</div>
+          <p class="footer-tagline">Intelligence Beneath. <br>Capability Beyond.</p>
+          <div class="footer-socials" style="display: flex; gap: var(--space-md); margin-top: var(--space-sm);">
+            <a href="https://linkedin.com/company/thalaxis-technology" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+            <a href="https://twitter.com/thalaxistech" target="_blank" rel="noopener" class="footer-link">Twitter</a>
+            <a href="https://youtube.com/@thalaxistechnology" target="_blank" rel="noopener" class="footer-link">YouTube</a>
+            <a href="https://github.com/thalaxis-technology" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <nav class="footer-links">
+            <a href="about" class="footer-link">About Us</a>
+            <a href="products" class="footer-link">Products</a>
+            <a href="careers" class="footer-link">Careers</a>
+            <a href="contact" class="footer-link">Contact</a>
+          </nav>
+        </div>
+
+        <div class="footer-section">
+          <h4>Products</h4>
+          <nav class="footer-links">
+            <a href="product-detail?slug=autonomous-surface-vessel" class="footer-link">Autonomous Surface Vessel</a>
+            <a href="product-detail?slug=deep-submergence-unit" class="footer-link">Deep Submergence Unit</a>
+          </nav>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="mailto:info@thalaxistechnology.in" class="footer-link">info@thalaxistechnology.in</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="privacy-policy">Privacy Policy</a>
+          <a href="terms-and-conditions">Terms &amp; Conditions</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Thalaxis Technology</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module">
+    import {
+      initSmoothScroll,
+      setActiveNavLink,
+      initMobileMenu,
+      respectReducedMotion,
+      updateCopyrightYear,
+      initThemeSystem
+    } from './js/utils.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initSmoothScroll();
+      setActiveNavLink();
+      initMobileMenu();
+      respectReducedMotion();
+      updateCopyrightYear();
+      initThemeSystem();
+
+      // Video Mute/Unmute control
+      const video = document.getElementById('hero-video-el');
+      const muteBtn = document.getElementById('video-mute-toggle');
+      const muteIcon = document.getElementById('mute-icon');
+      const muteText = document.getElementById('mute-text');
+
+      if (video && muteBtn) {
+        muteBtn.addEventListener('click', () => {
+          video.muted = !video.muted;
+          if (video.muted) {
+            muteIcon.textContent = '🔇';
+            muteText.textContent = 'Unmute Video';
+          } else {
+            muteIcon.textContent = '🔊';
+            muteText.textContent = 'Mute Video';
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
