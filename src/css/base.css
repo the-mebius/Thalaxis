@@ -23,8 +23,38 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background-image: url("/img/Background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+/* Full-bleed sections (hero video, footer) must span edge-to-edge */
+.hero-video,
+.footer {
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
+/* Blend the background image with the site's abyssal palette so text stays readable */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(0, 229, 153, 0.10) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(3, 5, 8, 0.55) 0%, rgba(3, 5, 8, 0.82) 45%, rgba(3, 5, 8, 0.94) 100%);
+  pointer-events: none;
+}
+
+:root[data-theme="light"] body::after {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(0, 158, 99, 0.08) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(244, 245, 246, 0.55) 0%, rgba(244, 245, 246, 0.88) 100%);
 }
 
 /* Safe-area spacer so fixed chrome never paints over page top */
@@ -34,7 +64,7 @@ body::before {
   inset: 0 0 auto;
   height: env(safe-area-inset-top, 0px);
   z-index: 1;
-  background: var(--color-void);
+  background: transparent;
   pointer-events: none;
 }
 
@@ -174,3 +204,4 @@ p { max-width: 68ch; }
     scroll-behavior: auto !important;
   }
 }
+

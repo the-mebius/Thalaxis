@@ -7,6 +7,38 @@
         "rule": "overused-font",
         "value": "inter",
         "createdAt": "2026-10-28T23:27:12.920Z"
+      },
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          "src/**/*.html"
+        ],
+        "createdAt": "2026-10-30T18:47:00.038Z"
+      },
+      {
+        "rule": "kicker-above-heading",
+        "value": "*",
+        "files": [
+          "src/**/*.html"
+        ],
+        "createdAt": "2026-10-30T18:47:13.143Z"
+      },
+      {
+        "rule": "skipped-heading",
+        "value": "*",
+        "files": [
+          "src/**/*.html"
+        ],
+        "createdAt": "2026-10-30T18:47:15.915Z"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "src/index.html"
+        ],
+        "createdAt": "2026-10-30T19:11:44.827Z"
       }
     ]
   }

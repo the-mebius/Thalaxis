@@ -615,3 +615,11 @@ p {
     height: 100%;
     object-fit: contain;
 }
+
+body {
+  background-image: url("/img/Backgrounf.jpg"); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
