@@ -126,37 +126,53 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.disabled = true;
     submitBtn.innerText = 'Submitting...';
 
-    const formData = new FormData(applicationForm);
-    formData.set('positionId', positionIdInput.value);
-    formData.set('name', name);
-    formData.set('_replyto', email);
-    formData.set('phone', phone);
-    formData.set('coverLetter', document.getElementById('applicant-cover').value.trim());
+    // Convert resume file to Base64 data URL so Formspree receives it reliably without multipart plan limits
+    const reader = new FileReader();
+    reader.readAsDataURL(resume);
+    reader.onload = async function () {
+      const base64Resume = reader.result;
 
-    try {
-      const response = await fetch('https://formspree.io/f/xjyyaywg', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json'
-        },
-        body: formData
-      });
+      try {
+        const response = await fetch('https://formspree.io/f/xjyyaywg', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            positionId: positionIdInput.value,
+            name: name,
+            _replyto: email,
+            phone: phone,
+            coverLetter: document.getElementById('applicant-cover').value.trim(),
+            resumeFileName: resume.name,
+            resumeFileType: resume.type,
+            resumeFileBase64: base64Resume
+          })
+        });
 
-      if (response.ok) {
-        successAlert.style.display = 'block';
-        applicationForm.reset();
-        positionIdInput.value = positionIdInput.value;
-        successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      } else {
-        const data = await response.json();
-        alert(data.error || 'Failed to submit application. Please try again.');
+        if (response.ok) {
+          successAlert.style.display = 'block';
+          applicationForm.reset();
+          positionIdInput.value = positionIdInput.value;
+          successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          const data = await response.json();
+          alert(data.error || 'Failed to submit application. Please try again.');
+        }
+      } catch (error) {
+        console.error('Submission error:', error);
+        alert('Network error. Please try again later.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = originalBtnText;
       }
-    } catch (error) {
-      console.error('Submission error:', error);
-      alert('Network error. Please try again later.');
-    } finally {
+    };
+    reader.onerror = function (error) {
+      console.error('File reading error:', error);
+      alert('Failed to read resume file. Please try again.');
       submitBtn.disabled = false;
       submitBtn.innerText = originalBtnText;
-    }
+    };
   });
 });
