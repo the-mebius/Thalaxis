@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
-  base: '/Thalaxis/',
+  base: './',
   root: 'src',
   publicDir: '../public',
   build: {
@@ -10,7 +10,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/index.html'),
+        index: resolve(__dirname, 'src/index.html'),
         about: resolve(__dirname, 'src/about.html'),
         products: resolve(__dirname, 'src/products.html'),
         productDetail: resolve(__dirname, 'src/product-detail.html'),

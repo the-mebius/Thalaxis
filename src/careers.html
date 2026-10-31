@@ -89,7 +89,7 @@
         <p class="soft" style="font-size: 0.9375rem; margin-bottom: 0;">Thank you for your application. Our recruitment team will review your qualifications and contact you within five business days.</p>
       </div>
 
-      <form id="application-form" class="stack-lg" novalidate>
+      <form id="application-form" class="stack-lg" novalidate enctype="multipart/form-data">
         <input type="hidden" id="position-id" name="positionId">
 
         <div class="form-group">
@@ -106,13 +106,14 @@
 
         <div class="form-group">
           <label for="applicant-phone" class="form-label">Phone Number</label>
-          <input type="tel" id="applicant-phone" name="phone" class="form-input" placeholder="+1 (555) 019-2834">
+          <input type="tel" id="applicant-phone" name="phone" class="form-input" placeholder="+1 (555) 019-2834" inputmode="tel" pattern="[0-9+()\-\s]+" oninput="this.value=this.value.replace(/[^0-9+()\-\s]/g,'')">
+          <div class="form-error" id="error-app-phone" style="display: none;">Please enter a valid phone number.</div>
         </div>
 
         <div class="form-group">
-          <label for="applicant-resume" class="form-label">Resume / CV Link or File Name *</label>
-          <input type="text" id="applicant-resume" name="resume" class="form-input" required placeholder="Link to LinkedIn, Portfolio, or PDF file name">
-          <div class="form-error" id="error-app-resume" style="display: none;">Please provide your resume link or file.</div>
+          <label for="applicant-resume" class="form-label">Resume / CV (PDF, DOC, DOCX) *</label>
+          <input type="file" id="applicant-resume" name="resume" class="form-file" required accept=".pdf,.doc,.docx,.txt">
+          <div class="form-error" id="error-app-resume" style="display: none;">Please upload a valid resume file (PDF, DOC, or DOCX).</div>
         </div>
 
         <div class="form-group">
@@ -179,146 +180,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script type="module">
-    import { getActiveJobs, getJobById } from './data/careers.js';
-    import {
-      initSmoothScroll,
-      setActiveNavLink,
-      initMobileMenu,
-      respectReducedMotion,
-      updateCopyrightYear,
-      initThemeSystem
-    } from './js/utils.js';
-
-    document.addEventListener('DOMContentLoaded', () => {
-      initSmoothScroll();
-      setActiveNavLink();
-      initMobileMenu();
-      respectReducedMotion();
-      updateCopyrightYear();
-      initThemeSystem();
-
-      // Render job listings
-      const jobsRoot = document.getElementById('job-listings-root');
-      const activeJobs = getActiveJobs();
-
-      if (activeJobs.length === 0) {
-        jobsRoot.innerHTML = `
-          <div class="card" style="text-align: center; padding: var(--space-3xl);">
-            <h3>No open positions at this time</h3>
-            <p class="soft" style="margin: var(--space-md) auto 0;">We are always interested in connecting with experienced marine engineers and roboticists. Send your CV to <a href="mailto:info@thalaxistechnology.in" class="brand">info@thalaxistechnology.in</a>.</p>
-          </div>
-        `;
-      } else {
-        jobsRoot.innerHTML = activeJobs.map(job => `
-          <article class="card" data-job-id="${job.id}">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-lg); margin-bottom: var(--space-md); flex-wrap: wrap;">
-              <div>
-                <span class="badge badge-brand" style="margin-bottom: var(--space-xs); display: inline-flex;">${job.department}</span>
-                <h3 style="font-size: 1.5rem; margin-bottom: var(--space-2xs);">${job.title}</h3>
-                <p class="soft" style="font-size: 0.875rem;">${job.location} &bull; ${job.type}</p>
-              </div>
-              <button class="btn btn-primary apply-trigger-btn" data-job-id="${job.id}">Apply for Role</button>
-            </div>
-
-            <p class="soft" style="line-height: 1.7; margin-bottom: var(--space-lg);">${job.description}</p>
-
-            <div class="stack-sm" style="border-top: 1px solid var(--color-line); padding-top: var(--space-lg);">
-              <h4 style="font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.05em;">Key Requirements</h4>
-              <ul style="padding-left: 1.25rem; color: var(--color-ink-soft);" class="stack-2xs">
-                ${job.requirements.map(req => `<li>${req}</li>`).join('')}
-              </ul>
-            </div>
-          </article>
-        `).join('');
-      }
-
-      // Modal logic
-      const modal = document.getElementById('apply-modal');
-      const modalClose = modal.querySelector('.modal-close');
-      const positionTitle = document.getElementById('modal-position-title');
-      const positionIdInput = document.getElementById('position-id');
-      const applicationForm = document.getElementById('application-form');
-      const successAlert = document.getElementById('modal-success-alert');
-
-      document.querySelectorAll('.apply-trigger-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const jobId = btn.getAttribute('data-job-id');
-          const job = getJobById(jobId);
-          if (!job) return;
-
-          positionTitle.textContent = `Apply for ${job.title}`;
-          positionIdInput.value = job.id;
-          successAlert.style.display = 'none';
-          applicationForm.reset();
-          positionIdInput.value = job.id;
-
-          modal.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-
-      function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-
-      modalClose.addEventListener('click', closeModal);
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-          closeModal();
-        }
-      });
-
-      // Form submission adapter
-      applicationForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        document.querySelectorAll('.form-error').forEach(el => el.style.display = 'none');
-
-        let isValid = true;
-        const name = document.getElementById('applicant-name').value.trim();
-        const email = document.getElementById('applicant-email').value.trim();
-        const resume = document.getElementById('applicant-resume').value.trim();
-
-        if (!name) {
-          document.getElementById('error-app-name').style.display = 'block';
-          isValid = false;
-        }
-
-        if (!email || !email.includes('@')) {
-          document.getElementById('error-app-email').style.display = 'block';
-          isValid = false;
-        }
-
-        if (!resume) {
-          document.getElementById('error-app-resume').style.display = 'block';
-          isValid = false;
-        }
-
-        if (!isValid) return;
-
-        const applicationData = {
-          positionId: positionIdInput.value,
-          name,
-          email,
-          phone: document.getElementById('applicant-phone').value.trim(),
-          resume,
-          coverLetter: document.getElementById('applicant-cover').value.trim(),
-          timestamp: new Date().toISOString(),
-        };
-
-        console.log('Job application submitted successfully (Adapter):', applicationData);
-
-        successAlert.style.display = 'block';
-        applicationForm.reset();
-        successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      });
-    });
-  </script>
+  <script type="module" src="./js/pages/careers.js"></script>
 
 </body>
 </html>

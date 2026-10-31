@@ -114,6 +114,21 @@
   border-color: var(--color-brand);
 }
 
+/* File upload inputs render differently from text inputs */
+.form-file {
+  border: 1px dashed var(--color-line);
+  background: var(--color-surface);
+  padding: 0.875rem;
+  cursor: pointer;
+  font-size: 0.9375rem;
+}
+.form-file::-webkit-file-upload-button {
+  display: none;
+}
+.form-file::file-selector-button {
+  display: none;
+}
+
 .form-input::placeholder,
 .form-textarea::placeholder {
   color: var(--color-ink-faint);
