@@ -46,8 +46,8 @@ export const products = [
     category: 'Surface Vessel',
     shortDescription: 'An intelligent autonomous marine platform designed to support modern maritime operations through AI-powered navigation and modular sensor integration.',
     fullDescription: 'The Autonomous Surface Vessel (ASV) is an intelligent autonomous marine platform designed to support modern maritime operations through AI-powered navigation, modular sensor integration, and adaptive mission configurations. Purpose-built for port operations, marine surveying, and environmental monitoring with indigenous engineering at its core.',
-    mainImage: 'assets/img/ship1.jpg',
-    galleryImages: ['assets/img/ship2.jpg', 'assets/img/ship3.jpg'],
+    mainImage: '/img/ship1.jpg',
+    galleryImages: ['/img/ship2.jpg', '/img/ship3.jpg'],
     specifications: [
       { label: 'Platform Type', value: 'Autonomous Surface Vessel (ASV)' },
       { label: 'Navigation', value: 'AI-Powered Autonomous / Remote' },
@@ -77,7 +77,7 @@ export const products = [
         description: 'Encrypted multi-link telemetry streaming live sensor data and HD video feeds to command centers.',
       },
     ],
-    model3D: '/model/asv assembly.glb',
+    model3D: './model/asv assembly.glb',
     faq: [
       {
         question: 'What is the primary mission profile for the ASV?',
@@ -100,8 +100,8 @@ export const products = [
     category: 'Deep Submergence',
     shortDescription: 'An underwater robotic platform engineered for subsea operations with integrated vehicle control and real-time acoustic telemetry.',
     fullDescription: 'The Deep Submergence Unit (AUV) is an advanced underwater robotic platform engineered for subsea operations—featuring integrated vehicle control, real-time acoustic telemetry, and mission-specific sensor payloads. Designed for underwater surveying, marine research, and subsea infrastructure inspection at extreme depths.',
-    mainImage: 'assets/img/11.png',
-    galleryImages: ['assets/img/22.png', 'assets/img/33.png'],
+    mainImage: '/img/11.png',
+    galleryImages: ['/img/22.png', '/img/33.png'],
     specifications: [
       { label: 'Platform Type', value: 'Autonomous Underwater Vehicle (AUV)' },
       { label: 'Maximum Operating Depth', value: 'Up to 6,000 meters' },
@@ -131,7 +131,7 @@ export const products = [
         description: 'Configurable instrument bays for oceanographic sensors, cameras, and magnetic anomaly detectors.',
       },
     ],
-    model3D: '/model/asv assembly.glb',
+    model3D: './model/auv assembly.glb',
     faq: [
       {
         question: 'What is the maximum depth rating for the AUV?',
