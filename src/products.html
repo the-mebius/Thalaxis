@@ -69,9 +69,9 @@
     <div class="container container-wide">
       <div class="products-catalog-grid">
         <!-- ASV -->
-        <article class="product-catalog-card card" style="padding: 0; overflow: hidden;">
+        <a href="product-detail?slug=autonomous-surface-vessel" class="product-catalog-card card" style="padding: 0; overflow: hidden; text-decoration: none; color: inherit; cursor: pointer; display: block;">
           <div style="width: 100%; height: 100%; overflow: hidden; background: transparent; position: relative;">
-            <img src="/img/ship1.jpg" alt="Autonomous Surface Vessel (ASV)" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            <img src="./img/ship1.jpg" alt="Autonomous Surface Vessel (ASV)" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
             <div style="position: absolute; top: var(--space-md); right: var(--space-md);">
               <span class="badge badge-brand">SURFACE VESSEL</span>
             </div>
@@ -110,11 +110,11 @@
             </table>
 
             <div class="row-sm">
-              <a href="product-detail?slug=autonomous-surface-vessel" class="btn btn-primary">View Specifications</a>
-              <a href="contact?product=autonomous-surface-vessel" class="btn btn-secondary">Enquire</a>
+              <span class="btn btn-primary" style="display: inline-flex;">View Specifications</span>
+              <span class="btn btn-secondary" style="display: inline-flex;" onclick="event.preventDefault(); event.stopPropagation(); window.location.href='contact?product=autonomous-surface-vessel';">Enquire</span>
             </div>
           </div>
-        </article>
+        </a>
 
         <!-- AUV / Deep Submergence Unit -->
         <article class="product-catalog-card card" style="padding: 0; overflow: hidden;">
