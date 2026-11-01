@@ -77,7 +77,7 @@ export const products = [
         description: 'Encrypted multi-link telemetry streaming live sensor data and HD video feeds to command centers.',
       },
     ],
-    model3D: null,
+    model3D: '/model/asv assembly.glb',
     faq: [
       {
         question: 'What is the primary mission profile for the ASV?',
@@ -131,7 +131,7 @@ export const products = [
         description: 'Configurable instrument bays for oceanographic sensors, cameras, and magnetic anomaly detectors.',
       },
     ],
-    model3D: null,
+    model3D: '/model/asv assembly.glb',
     faq: [
       {
         question: 'What is the maximum depth rating for the AUV?',
