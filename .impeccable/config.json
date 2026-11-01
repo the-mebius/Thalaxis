@@ -39,6 +39,15 @@
           "src/index.html"
         ],
         "createdAt": "2026-10-30T19:11:44.827Z"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "src/products.html"
+        ],
+        "createdAt": "2026-11-01T01:18:10.532Z",
+        "reason": "Intentional design system colors used consistently across all site pages"
       }
     ]
   }
